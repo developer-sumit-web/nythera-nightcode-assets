@@ -1,4 +1,4 @@
-# Groovy Nythera Theme
+# Nythera Nightcode
 
 A clean and modern **Visual Studio Code theme**.
 
@@ -20,4 +20,4 @@ A clean and modern **Visual Studio Code theme**.
 ### Example Code
 
 ```javascript
-console.log("Groovy Nythera Theme");
+console.log("Nythera Nightcode Theme");

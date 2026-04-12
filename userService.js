@@ -1,4 +1,4 @@
-// Groovy Nythera JavaScript Preview
+// Nythera Nightcode Preview
 
 class ThemePreview {
   constructor(name, version) {
@@ -9,19 +9,29 @@ class ThemePreview {
 
   printInfo() {
     console.log(`Theme: ${this.name}`);
-    console.log(`Version: ${this.version}`);
+    console.log(`Version: ${this.version ?? "unknown"}`);
   }
 
   highlight(language) {
     if (this.languages.includes(language)) {
       return `Syntax highlighting enabled for ${language}`;
-    } else {
-      return "Language not supported";
+    }
+    return "Language not supported";
+  }
+
+  async loadConfig(path = "./config.json") {
+    try {
+      const response = await fetch(path);
+      const data = await response.json();
+      return data?.settings ?? null;
+    } catch (error) {
+      console.error("Failed to load config:", error.message);
+      return null;
     }
   }
 }
 
-const theme = new ThemePreview("Groovy Nythera", 1.0);
+const theme = new ThemePreview("Nythera Nightcode", 1.1);
 
 theme.printInfo();
 

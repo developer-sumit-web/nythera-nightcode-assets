@@ -1,11 +1,42 @@
 {
-  "theme": "Groovy Nythera",
-  "version": "1.0.0",
-  "author": "Sumit",
-  "languages": ["JavaScript", "Python", "HTML", "CSS", "Java", "C", "C++"],
-  "settings": {
-    "editor.background": "#1e1e1e",
-    "editor.foreground": "#d4d4d4",
-    "cursor.color": "#7aa2f7"
-  }
+  "theme": "Nythera Nightcode",
+  "version": "2.1.0",
+  "author": "sumit-dev",
+  "metadata": {
+    "created": "2026-01-01",
+    "updated": null,
+    "stable": true
+  },
+  "colors": {
+    "background": "#0f161f",
+    "foreground": "#c7bfa8",
+    "primary": "#78B892",
+    "accent": "#6791C9"
+  },
+  "features": [
+    "warm palette",
+    "dimmed contrast",
+    "consistent syntax",
+    "minimal UI"
+  ],
+  "editor": {
+    "font": {
+      "family": "Fira Code",
+      "size": 13,
+      "lineHeight": 23
+    },
+    "cursor": {
+      "style": "block",
+      "blink": "smooth"
+    },
+    "behavior": {
+      "smoothScrolling": true,
+      "minimap": false
+    }
+  },
+  "languages": [
+    { "name": "JavaScript", "enabled": true },
+    { "name": "Python", "enabled": true },
+    { "name": "C++", "enabled": true }
+  ]
 }

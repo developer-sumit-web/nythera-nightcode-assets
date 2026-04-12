@@ -1,31 +1,67 @@
-/* Groovy Nythera C Preview */
-
 #include <stdio.h>
+#include <string.h>
 
-int add(int a, int b)
+typedef struct
 {
-      return a + b;
+      int id;
+      char name[32];
+      int active;
+} User;
+
+User find_by_email(User users[], int size, const char *name)
+{
+      for (int i = 0; i < size; i++)
+      {
+            if (strcmp(users[i].name, name) == 0)
+            {
+                  return users[i];
+            }
+      }
+      User empty = {0, "", 0};
+      return empty;
+}
+
+void print_user(User u)
+{
+      if (u.active && strlen(u.name) > 0)
+      {
+            printf("User: %s (%d)\n", u.name, u.id);
+      }
+      else
+      {
+            printf("Inactive or not found\n");
+      }
+}
+
+void process_users(User users[], int size)
+{
+      for (int i = 0; i < size; i++)
+      {
+            User u = users[i];
+            if (u.active)
+            {
+                  printf("Active: %s\n", u.name);
+            }
+            else
+            {
+                  printf("Inactive: %s\n", u.name);
+            }
+      }
 }
 
 int main()
 {
+      User users[] = {
+          {1, "Sumit", 1},
+          {2, "Alex", 0},
+          {3, "Dev", 1}};
 
-      int numbers[] = {2, 4, 6, 8};
-      int length = sizeof(numbers) / sizeof(numbers[0]);
+      int size = sizeof(users) / sizeof(users[0]);
 
-      printf("Groovy Nythera Theme\n");
+      User result = find_by_email(users, size, "Sumit");
+      print_user(result);
 
-      for (int i = 0; i < length; i++)
-      {
-            printf("Number: %d\n", numbers[i]);
-      }
-
-      int result = add(10, 5);
-
-      if (result > 10)
-      {
-            printf("Result: %d\n", result);
-      }
+      process_users(users, size);
 
       return 0;
 }

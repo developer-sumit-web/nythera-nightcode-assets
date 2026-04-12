@@ -1,31 +1,49 @@
-/* Groovy Nythera CSS Preview */
-body {
-  font-family: "JetBrains Mono", monospace;
-  background: #1e1e1e;
-  color: #d4d4d4;
+/* Nythera Nightcode Preview */
+
+:root {
+  --bg: #0f161f;
+  --primary: #78B892;
+  --accent: #6791C9;
+  --text: #c7bfa8;
 }
 
-header {
-  background: #24283b;
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Fira Code", monospace;
+  margin: 0;
   padding: 20px;
 }
 
-h1 {
-  color: #7aa2f7;
+.container {
+  border: 1px solid #2e425b;
+  padding: 16px;
+  border-radius: 8px;
 }
 
-ul li {
-  margin: 8px 0;
+.container:hover {
+  border-color: var(--primary);
 }
 
-button {
-  background: #7aa2f7;
-  color: white;
+.title {
+  color: var(--accent);
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.button {
+  background: var(--primary);
+  color: #0f161f;
+  padding: 8px 12px;
   border: none;
-  padding: 10px 16px;
   cursor: pointer;
 }
 
-button:hover {
-  background: #5f87ff;
+.button:hover {
+  background: #8CD7AA;
+}
+
+.list-item::before {
+  content: "• ";
+  color: var(--primary);
 }

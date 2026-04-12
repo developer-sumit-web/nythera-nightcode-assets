@@ -1,29 +1,35 @@
-# Groovy Nythera Python Preview
+class UserService:
+    def __init__(self, repository):
+        self.repository = repository
 
-class ThemePreview:
-    def __init__(self, name, version):
-        self.name = name
-        self.version = version
-        self.languages = ["Python", "JavaScript", "HTML", "CSS"]
+    def find_by_email(self, email: str):
+        if not email or not isinstance(email, str):
+            raise ValueError("Invalid email provided")
 
-    def display_info(self):
-        print(f"Theme: {self.name}")
-        print(f"Version: {self.version}")
+        user = self.repository.find_by_email(email)
+        return None if user and user.is_deleted else user
 
-    def highlight(self, language):
-        if language in self.languages:
-            return f"Highlighting enabled for {language}"
-        return "Language not supported"
+    def get_active_users(self):
+        return [
+            {
+                "id": user.id,
+                "name": user.name,
+                "role": user.role or "guest"
+            }
+            for user in self.repository.find_all()
+            if user.is_active
+        ]
+
+    def load_config(self, path="./config.json"):
+        try:
+            with open(path, "r") as f:
+                return f.read()
+        except Exception as error:
+            print(f"Failed to load config: {error}")
+            return None
 
 
-def main():
-    theme = ThemePreview("Groovy Nythera", 1.0)
+service = UserService(None)
 
-    theme.display_info()
-
-    for lang in theme.languages:
-        print(theme.highlight(lang))
-
-
-if __name__ == "__main__":
-    main()
+for user in service.get_active_users():
+    print(f"{user['name']} ({user['role']})")
