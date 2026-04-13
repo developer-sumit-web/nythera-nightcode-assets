@@ -1,6 +1,6 @@
 # Nythera Nightcode Assets
 
-![Nythera Nightcode Preview](https://raw.githubusercontent.com/developer-sumit-web/nythera-nightcode-assets/main/Assets/preview-main.png)
+![Nythera Nightcode Preview](https://raw.githubusercontent.com/developer-sumit-web/nythera-nightcode-assets/main/preview-main.png)
 
 This repository contains the **preview images and visual assets** used for the **Nythera Nightcode Visual Studio Code theme**.
 

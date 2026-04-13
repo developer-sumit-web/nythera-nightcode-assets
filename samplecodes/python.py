@@ -28,7 +28,6 @@ class UserService:
             print(f"Failed to load config: {error}")
             return None
 
-
 service = UserService(None)
 
 for user in service.get_active_users():
