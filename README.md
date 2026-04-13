@@ -6,9 +6,9 @@ This repository contains the **preview images and visual assets** used for the *
 
 These assets are used across multiple locations including:
 
-* Visual Studio Code Marketplace
-* GitHub documentation
-* Theme previews and promotional screenshots
+- Visual Studio Code Marketplace
+- GitHub documentation
+- Theme previews and promotional screenshots
 
 ---
 
@@ -20,8 +20,8 @@ Assets/
   screenshots/
 ```
 
-* **preview-main.png** — Main hero preview used in the theme documentation.
-* **screenshots/** — Contains language-specific screenshots demonstrating how the theme appears across different programming languages.
+- **preview-main.png** — Main hero preview used in the theme documentation.
+- **screenshots/** — Contains language-specific screenshots demonstrating how the theme appears across different programming languages.
 
 ---
 
